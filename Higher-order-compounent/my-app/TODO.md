@@ -1,0 +1,1 @@
+- [x] Fix the map function in PostList.jsx to properly return JSX elements

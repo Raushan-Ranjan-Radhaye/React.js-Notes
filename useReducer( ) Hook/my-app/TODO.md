@@ -1,0 +1,4 @@
+- [x] Fix component name from "From" to "Form"
+- [x] Correct dispatch properties in handleChange function
+- [x] Update export default to "Form"
+- [x] Test form inputs to ensure they update state correctly
