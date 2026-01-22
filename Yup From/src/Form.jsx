@@ -1,12 +1,12 @@
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import registerSchema from './schema'
-import {yupResolver} from '@hookform/resolvers/yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 function Form() {
 
     const {
         register,
         handleSubmit,
-        formState: {errors}
+        formState: { errors }
     } = useForm({
         resolver: yupResolver(registerSchema)
     })
@@ -16,22 +16,26 @@ function Form() {
     }
 
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-        <input type='text' {...register('name')} placeholder='Name'></input>
-        <p className='error'>{errors.name?.message}</p>
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input type='text' {...register('name')} placeholder='Name'></input>
+            <p className='error'>{errors.name?.message}</p>
 
-        <input type='email' {...register('email')} placeholder='Email'></input>
-        <p className='error'>{errors.email?.message}</p>
+            <input type='email' {...register('email')} placeholder='Email'></input>
+            <p className='error'>{errors.email?.message}</p>
 
-        <input type='password' {...register('password')} placeholder='Password'></input>
-        <p className='error'>{errors.password?.message}</p>
+            <input type='password' {...register('password')} placeholder='Password'></input>
+            <p className='error'>{errors.password?.message}</p>
 
-        <button type='submit'>Register</button>
+            <input type='password' {...register('confirmPassword')} placeholder='Confirm Password'></input>
+            <p className='error'>{errors.confirmPassword?.message}</p>
 
+            <input type='number' {...register('age')} placeholder='Age'></input>
+            <p className='error'>{errors.age?.message}</p>
 
-    </form>
-  )
+            <button type='submit'>Register</button>
+        </form>
+    )
 }
 
 export default Form
